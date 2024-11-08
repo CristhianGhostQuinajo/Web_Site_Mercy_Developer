@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contactanos</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+              <img src="logo.webp" alt="Logo Empresa" width="40" height="40">
+              <span style="color: rgb(255, 255, 255)"> Empresa</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse collapse show" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:4200/inicio" style="color: rgb(255, 255, 255)">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:4200/ubicanos" style="color: rgb(255, 255, 255)">Ubícanos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:4200/contactanos" style="color: rgb(255, 255, 255)">Contáctanos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>  
+      <br><br><br><br><br>
+      <section id="portada" class="text-center mb-4">
+        <h1 class="display-4" style="color: rgb(255, 255, 255)">Contáctanos</h1>
+        <div id="overlay"></div>
+      </section>
+      <br><br>
+      <div class="container">
+        <div class="row">
+            <main class="container my-5">
+
+                <section id="redes-sociales" class="text-center mb-5">
+                    <h1 class="text-center mb-3" style="color: rgb(255, 255, 255)">Conéctate con nosotros</h1>
+
+                    <a href="https://web.facebook.com/CFTEstatalAricayParinacota/?locale=es_LA&amp;_rdc=1&amp;_rdr" target="_blank" class="me-3">
+                        <img src="facebook logo.png" alt="Facebook" width="40">
+                    </a>
+                    <a href="https://www.instagram.com/tnsinformaticacftarica/" target="_blank" class="me-3">
+                        <img src="logoi.png" alt="Instagram" width="80">
+                    </a>
+                    <a href="https://www.whatsapp.com/" target="_blank">
+                        <img src="WhatsApplogo.webp" alt="WhatsApp" width="45">
+                    </a>
+                </section>
+        
+            </main>
+            <div class="form-group">
+                <form [formGroup]="formularioForm" (ngSubmit)="enviarDatos()" method="POST" class="mx-auto" style="max-width: 600px;">
+                    <div class="mb-2">
+                        <label for="nombre" class="form-label" style="color: rgb(255, 255, 255)">Nombre</label>
+                        <input type="text" class="form-control"
+                        formControlName="nombre" id="nombre" 
+                        aria-describedby="nombreHelp"
+                        placeholder="Ingrese Nombre">
+                    </div>
+                </form>
+            </div>
+            <div class="form-group">
+                <form [formGroup]="formularioForm" (ngSubmit)="enviarDatos()" method="POST" class="mx-auto" style="max-width: 600px;">
+                    <div class="mb-2">
+                        <label for="apellido" class="form-label" style="color: rgb(255, 255, 255)">Apellido</label>
+                        <input type="text" class="form-control"
+                        formControlName="apellido" id="apellido" 
+                        aria-describedby="apellidoHelp"
+                        placeholder="Ingrese Apellido">
+                    </div>
+                </form>
+            </div>
+            <div class="form-group">
+                <form [formGroup]="formularioForm" (ngSubmit)="enviarDatos()" method="POST" class="mx-auto" style="max-width: 600px;">
+                    <div class="mb-2">
+                        <label for="email" class="form-label" style="color: rgb(255, 255, 255)">Correo Electronico</label>
+                        <input type="email" class="form-control"
+                        formControlName="email" id="email" 
+                        aria-describedby="emailHelp"
+                        placeholder="Ingrese email">
+                    </div>
+                </form>
+            </div>
+            <div class="form-group">
+                <form [formGroup]="formularioForm" (ngSubmit)="enviarDatos()" method="POST" class="mx-auto" style="max-width: 600px;">
+                    <div class="mb-2">
+                        <label for="Telefono" class="form-label" style="color: rgb(255, 255, 255)">Teléfono</label>
+                        <input type="tel" class="form-control"
+                        formControlName="Telefono" id="Telefono" 
+                        aria-describedby="TelefonoHelp"
+                        placeholder="Ingrese Telefono">
+                    </div>
+                </form>
+            </div>
+            <div class="form-group">
+                <form [formGroup]="formularioForm" (ngSubmit)="enviarDatos()" method="POST" class="mx-auto" style="max-width: 600px;">
+                    <div class="mb-2">
+                        <label for="mensaje" class="form-label" style="color: rgb(255, 255, 255)">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required=""
+                        formControlName="mensaje"
+                        aria-describedby="mensajeHelp"
+                        placeholder="Ingrese su problema" 
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button><br>
+                    <b class="card-text h4" style="color: blue;">
+                        Hola {{formularioForm.value.nombre}} {{formularioForm.value.apellido}},<br>
+                        su mensaje ha sido enviado correctamente
+                    </b>
+                </form>
+            </div>
+        </div>
+      </div><br>
+      <footer class="bg-white text-dark text-center py-3">
+        <div class="container">
+            <img src="logo.webp" alt="Logo Empresa" width="40" height="40">
+            <p class="mb-0">Empresa | Contacto: +56926110490</p>
+        </div>
+      </footer>
+</body>
+</html>
